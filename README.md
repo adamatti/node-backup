@@ -1,7 +1,7 @@
-Simple code to backup things. Better for first backup - do not use for existing backup/delta
+Simple code to backup things.
+
+Note: it creates a full backup (doesn't perform deltas)
 
 # Pending / Bugs / Enhancements
 
-- Rate limit
 - jest not working
-- lint
