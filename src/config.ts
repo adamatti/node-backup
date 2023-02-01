@@ -11,7 +11,24 @@ export interface Config {
   ignoreExt: string[]
 }
 
-const file = fs.readFileSync('./config.yaml', 'utf8')
-const config: Config = YAML.parse(file)
+const emptyConfig:Config = {
+  dropbox: {
+    accessToken: '',    
+  },
+  folders: [],
+    ignore: [],
+    ignoreExt: []
+}
+
+let config: Config;
+
+if (process.env['NODE_ENV'] === 'test'){
+  config = emptyConfig;
+} else if (fs.existsSync('./config.yaml')) {
+  const file = fs.readFileSync('./config.yaml', 'utf8')
+  config = YAML.parse(file)
+} else {
+  throw new Error('config.yaml not found')
+}
 
 export default config

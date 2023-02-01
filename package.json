@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --build",
     "lint": "eslint ./src",
-    "test": "TEST_EXTENSIONS=.test.ts NODE_OPTIONS=--no-warnings ts-node-test src/"
+    "test": "TEST_EXTENSIONS=.test.ts NODE_OPTIONS=--no-warnings NODE_ENV=test ts-node-test src/"
   },
   "keywords": [],
   "author": "",
