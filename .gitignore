@@ -1,0 +1,11 @@
+# Folders
+node_modules/
+dist/
+
+# Files
+.env
+config.yaml
+tsconfig.tsbuildinfo
+
+# Extensions
+*.log
