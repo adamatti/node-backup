@@ -1,0 +1,23 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 18.12
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.12
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Lint check
+        run: yarn lint
+      - name: Unit tests
+        run: yarn test
